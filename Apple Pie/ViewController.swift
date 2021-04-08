@@ -14,6 +14,14 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBOutlet var treeImageView: UIImageView!
+    @IBOutlet var correctWordLabel: UILabel!
+    @IBOutlet var scoreLabel: UILabel!
+    
+    @IBOutlet var letterButtons: [UIButton]!
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        sender.isEnabled = false
+    }
+    
 }
 
