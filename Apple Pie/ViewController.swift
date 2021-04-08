@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     func newRound() {
         let newWord = listOfWords.removeFirst()
         currentGame = Game(word: newWord, incorrectMoveRemaining: incorrectMovesAllowed)
+        updateUI()
     }
     
     func updateUI() {
