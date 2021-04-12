@@ -31,8 +31,9 @@ class ViewController: UIViewController {
     var currentGame: Game!
 
     func newRound() {
+        let num = Int.random(in: 0...listOfWords.count-1)
         if !listOfWords.isEmpty {
-            let newWord = listOfWords.removeFirst()
+            let newWord = listOfWords.remove(at: num)
             currentGame = Game(word: newWord, incorrectMoveRemaining: incorrectMovesAllowed, guessedLetters: [])
             enableLetterButtons(true)
             updateUI()
