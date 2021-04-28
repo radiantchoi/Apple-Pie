@@ -12,27 +12,20 @@ class ViewController: UIViewController {
     @IBOutlet var treeImageView: UIImageView!
     @IBOutlet var correctWordLabel: UILabel!
     @IBOutlet var scoreLabel: UILabel!
+    @IBOutlet var letterButtons: [UIButton]!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        newRound()
-    }
-    
     var listOfWords = ["buccaneer", "swift", "glorious", "incandescent", "bug", "program"]
     let incorrectMovesAllowed = 7
     var totalWins = 0 {
-        didSet {
-            newRound()
-        }
+        didSet { newRound() }
     }
     var totalLosses = 0 {
-        didSet {
-            newRound()
-        }
+        didSet { newRound() }
     }
-    
     var currentGame: Game!
+    
 
+    
     func newRound() {
         let num = Int.random(in: 0...listOfWords.count-1)
         if !listOfWords.isEmpty {
@@ -44,11 +37,28 @@ class ViewController: UIViewController {
             enableLetterButtons(false)
         }
     }
-
+    
     func enableLetterButtons(_ enable: Bool) {
         for button in letterButtons {
             button.isEnabled = enable
         }
+    }
+    
+    func updateGameState() {
+        if currentGame.incorrectMoveRemaining == 0 {
+            totalLosses += 1
+        } else if currentGame.word == currentGame.formattedWord {
+            totalWins += 1
+        } else {
+            updateUI()
+        }
+    }
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        newRound()
     }
     
     func updateUI() {
@@ -64,7 +74,6 @@ class ViewController: UIViewController {
     
     
     
-    @IBOutlet var letterButtons: [UIButton]!
     @IBAction func buttonPressed(_ sender: UIButton) {
         sender.isEnabled = false
         let letterString = sender.title(for: .normal)!
@@ -72,16 +81,5 @@ class ViewController: UIViewController {
         currentGame.playerGuessed(letter: letter)
         updateGameState()
     }
-    
-    func updateGameState() {
-        if currentGame.incorrectMoveRemaining == 0 {
-            totalLosses += 1
-        } else if currentGame.word == currentGame.formattedWord {
-            totalWins += 1
-        } else {
-            updateUI()
-        }
-    }
-    
 }
 
