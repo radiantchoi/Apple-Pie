@@ -39,6 +39,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F32097D26395E2400194554 /* Asssets */ = {
+			isa = PBXGroup;
+			children = (
+				4FC5914C261F022F0095AAA5 /* Assets.xcassets */,
+				4FC59151261F022F0095AAA5 /* Info.plist */,
+				4FC5914E261F022F0095AAA5 /* LaunchScreen.storyboard */,
+			);
+			path = Asssets;
+			sourceTree = "<group>";
+		};
+		4F32097E26395E2F00194554 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4FC59147261F022E0095AAA5 /* ViewController.swift */,
+				4FC59149261F022E0095AAA5 /* Main.storyboard */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4F32097F26395E4300194554 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4F6D0799261F2B6C006248F4 /* Game.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		4FC59137261F022E0095AAA5 = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +85,11 @@
 		4FC59142261F022E0095AAA5 /* Apple Pie */ = {
 			isa = PBXGroup;
 			children = (
-				4F6D0799261F2B6C006248F4 /* Game.swift */,
+				4F32097F26395E4300194554 /* Models */,
+				4F32097E26395E2F00194554 /* ViewControllers */,
+				4F32097D26395E2400194554 /* Asssets */,
 				4FC59143261F022E0095AAA5 /* AppDelegate.swift */,
 				4FC59145261F022E0095AAA5 /* SceneDelegate.swift */,
-				4FC59147261F022E0095AAA5 /* ViewController.swift */,
-				4FC59149261F022E0095AAA5 /* Main.storyboard */,
-				4FC5914C261F022F0095AAA5 /* Assets.xcassets */,
-				4FC5914E261F022F0095AAA5 /* LaunchScreen.storyboard */,
-				4FC59151261F022F0095AAA5 /* Info.plist */,
 			);
 			path = "Apple Pie";
 			sourceTree = "<group>";
@@ -291,7 +315,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Apple Pie/Info.plist";
+				INFOPLIST_FILE = "Apple Pie/Assets/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -309,7 +333,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Apple Pie/Info.plist";
+				INFOPLIST_FILE = "Apple Pie/Assets/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

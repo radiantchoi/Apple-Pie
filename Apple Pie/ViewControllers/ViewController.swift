@@ -8,10 +8,13 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet var treeImageView: UIImageView!
+    @IBOutlet var correctWordLabel: UILabel!
+    @IBOutlet var scoreLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         newRound()
     }
     
@@ -59,9 +62,7 @@ class ViewController: UIViewController {
         treeImageView.image = UIImage(named: "Tree \(currentGame.incorrectMoveRemaining)")
     }
     
-    @IBOutlet var treeImageView: UIImageView!
-    @IBOutlet var correctWordLabel: UILabel!
-    @IBOutlet var scoreLabel: UILabel!
+    
     
     @IBOutlet var letterButtons: [UIButton]!
     @IBAction func buttonPressed(_ sender: UIButton) {
